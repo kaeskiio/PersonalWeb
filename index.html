@@ -7,35 +7,8 @@
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
-    <style>
-        /* Ensure the button is positioned correctly */
-        button#mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 9999;
-            color: #fff; /* Default color */
-        }
-
-        /* Adjust the icon size */
-        button#mode-toggle i {
-            font-size: 24px;
-        }
-
-        /* Adjust button color for dark mode */
-        body.dark-mode button#mode-toggle {
-            color: #000;
-        }
-    </style>
 </head>
 <body>
-    <button id="mode-toggle" onclick="toggleMode()">
-        <i class="fas fa-sun"></i> <!-- Light mode icon -->
-        <i class="fas fa-moon"></i> <!-- Dark mode icon -->
-    </button>
 <div id="header">
     <div class="container">
         <nav>
@@ -209,10 +182,71 @@
         </div>
     </div>
 </div>
-</body>
+
+
+
 <script>
-    function toggleMode() {
-        document.body.classList.toggle('dark-mode');
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = '< add you own link here >' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for (var tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (var tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
     }
 </script>
+</body>
 </html>

@@ -268,7 +268,6 @@ nav ul li a:hover::after{
 }
 .contact-right{
     flex-basis: 60%;
-    border:none;
 }
 .contact-left p{
     margin-top: 30px;
@@ -432,102 +431,4 @@ nav .fas{
 .tab-contents.active-tab {
     opacity: 1;
     position: relative;
-}
-/* Add these styles for dark mode */
-body.dark-mode {
-    background-color: #121212;
-    color: #fff;
-}
-
-/* Add these styles for light mode */
-button#mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 9999;
-}
-
-button#mode-toggle i {
-    font-size: 24px;
-}
-
-.dark-mode nav ul li a {
-    color: #fff;
-}
-
-.dark-mode nav ul li a::after {
-    background: #ff004f;
-}
-
-.dark-mode .sub-title {
-    color: #fff;
-}
-
-.dark-mode .tab-links.active-link::after {
-    background: #ff004f;
-}
-
-.dark-mode .services-list div {
-    background: #262626;
-}
-
-.dark-mode .services-list div:hover {
-    background: #ff004f;
-}
-
-.dark-mode #portfolio {
-    background: #080808;
-}
-
-.dark-mode .layer {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
-}
-
-.dark-mode .btn,
-.dark-mode .btn:hover,
-.dark-mode .btn.btn2 {
-    background: #ff004f;
-}
-
-.dark-mode .contact-left p i {
-    color: #ff004f;
-}
-
-.dark-mode .social-icons a {
-    color: #ababab;
-}
-
-.dark-mode .social-icons a:hover {
-    color: #ff004f;
-}
-
-.dark-mode form input,
-.dark-mode form textarea {
-    background: #262626;
-    color: #fff;
-}
-
-.dark-mode .copyright,
-.dark-mode .copyright i,
-.dark-mode .copyright a {
-    color: #ababab;
-}
-
-/* Ensure the button is positioned correctly */
-button#mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 9999;
-}
-
-/* Adjust the icon size */
-button#mode-toggle i {
-    font-size: 24px;
 }
