@@ -343,10 +343,9 @@ nav .fas{
         width: 100%;
         height: 100vh; /* Set height to 100% of the viewport height */
         background-image: url(images/phone-background.png);
-        background-size: cover; /* Cover the entire container */
+        background-size: contain; /* Ensure the entire image is visible */
         background-position: center; /* Center the background image */
         background-repeat: no-repeat; /* Prevent background from repeating */
-        background-attachment: fixed; /* Fix background position */
     }
     .header-text{
         margin-top: 100%;
