@@ -520,3 +520,72 @@ nav {
     scroll-snap-align: start;
 }
 
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    /* Adjustments for small screens, such as iPhones */
+
+    /* Header Text */
+    .header-text {
+        margin-top: 30%; /* Adjust as needed */
+        font-size: 24px; /* Adjust as needed */
+    }
+
+    .header-text h1 {
+        font-size: 40px; /* Adjust as needed */
+    }
+
+    /* Navigation */
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    nav ul.show {
+        max-height: 100vh;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+
+    nav .fas {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* About Section */
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    /* Testimonials Carousel */
+    .testimonials-container {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    }
+
+    .testimonial {
+        flex: 0 0 auto; /* Adjust as needed */
+        margin-right: 10px; /* Adjust as needed */
+    }
+}
+
