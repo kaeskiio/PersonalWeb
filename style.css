@@ -139,6 +139,14 @@ nav ul li a:hover::after{
 .tab-contents.active-tab{
     display: block;
 }
+.tab-contents {
+    display: none;
+    min-height: 200px; /* Adjust based on the content height */
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
 
 /* ----------------services------------- */
 #services{
@@ -412,7 +420,6 @@ nav .fas{
 .tab-contents.active-tab {
     display: block;
 }
-
 /* Ensure smooth transition */
 .tab-contents {
     transition: opacity 0.3s ease;
