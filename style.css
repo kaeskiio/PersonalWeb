@@ -268,6 +268,7 @@ nav ul li a:hover::after{
 }
 .contact-right{
     flex-basis: 60%;
+    border:none;
 }
 .contact-left p{
     margin-top: 30px;
@@ -339,6 +340,10 @@ nav .fas{
 
 @media only screen and (max-width: 600px){
     #header{
+        img {
+            max-width: 100%; /* Set maximum width to 100% of parent element */
+            height: auto; /* Maintain aspect ratio */
+        }
         background-image: url(images/phone-background.png);
     }
     .header-text{
