@@ -7,8 +7,35 @@
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <style>
+        /* Ensure the button is positioned correctly */
+        button#mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            color: #fff; /* Default color */
+        }
+
+        /* Adjust the icon size */
+        button#mode-toggle i {
+            font-size: 24px;
+        }
+
+        /* Adjust button color for dark mode */
+        body.dark-mode button#mode-toggle {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
+    <button id="mode-toggle" onclick="toggleMode()">
+        <i class="fas fa-sun"></i> <!-- Light mode icon -->
+        <i class="fas fa-moon"></i> <!-- Dark mode icon -->
+    </button>
 <div id="header">
     <div class="container">
         <nav>
@@ -182,137 +209,10 @@
         </div>
     </div>
 </div>
-
-
-
-<script>
-
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-
-</script>
-
-<script>
-
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu(){
-        sidemeu.style.right = "0";
-    }
-    function closemenu(){
-        sidemeu.style.right = "-200px";
-    }
-
-</script>
-<script>
-    const scriptURL = '< add you own link here >' // add your own app script link here
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
-  <script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for (var tablink of tablinks) {
-            tablink.classList.remove("active-link");
-        }
-        for (var tabcontent of tabcontents) {
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-</script>
-<!-- Additional Features -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
-
-<!-- Animation Script -->
-<script>
-    // Particle Background
-    particlesJS("header", {
-        "particles": {
-            "number": {
-                "value": 50
-            },
-            "size": {
-                "value": 3
-            }
-        },
-        "interactivity": {
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "repulse"
-                }
-            }
-        }
-    });
-
-    // ScrollMagic Animation
-    var controller = new ScrollMagic.Controller();
-
-    var aboutScene = new ScrollMagic.Scene({
-            triggerElement: "#about",
-            offset: 200
-        })
-        .setClassToggle("#about", "fade-in")
-        .addTo(controller);
-
-    var servicesScene = new ScrollMagic.Scene({
-            triggerElement: "#services",
-            offset: 200
-        })
-        .setClassToggle("#services", "fade-in")
-        .addTo(controller);
-
-    var portfolioScene = new ScrollMagic.Scene({
-            triggerElement: "#portfolio",
-            offset: 200
-        })
-        .setClassToggle("#portfolio", "fade-in")
-        .addTo(controller);
-</script>
-<!-- Smooth Scroll Script -->
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
-
 </body>
+<script>
+    function toggleMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+</script>
 </html>
