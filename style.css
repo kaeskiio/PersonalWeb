@@ -297,10 +297,25 @@ section {
 }
 
 .arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
+  display: block;
+  margin: 20px auto 20px auto; /* Adjust the margins as needed */
+  margin-right: 0; /* Align to the right */
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
+
+@media (min-width: 768px) {
+  .arrow {
+    margin-left: auto; /* Ensure it aligns right on larger screens */
+    margin-right: 0;
+  }
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
+
 
 .details-container {
   padding: 1.5rem;
@@ -550,7 +565,6 @@ footer p {
   font-size: 32px;
   padding: 18px;
   color: #5fcf80;
-  margin-bottom: 30px;
   background: #ecf9f0;
   border-radius: 50px;
   text-align: center;
